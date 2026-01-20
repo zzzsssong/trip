@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,11 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Song+Myung&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Song+Myung&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="app-container">
         <!-- Sidebar Controls -->
@@ -19,41 +23,43 @@
                 <p>시공간을 넘나드는 문화유산 여행</p>
             </header>
 
-            <div class="control-group">
-                <label for="region-select">지역 선택 (Region)</label>
-                <select id="region-select">
-                    <option value="all">전체 보기</option>
-                    <option value="gyeongju" selected>경상북도 경주시</option>
-                    <option value="seoul">서울특별시 종로구</option>
-                    <option value="buyeo">충청남도 부여군</option>
-                </select>
-            </div>
-
-            <div class="control-group">
-                <label>시대 설정 (Time Travel)</label>
-                <div class="slider-container">
-                    <input type="range" id="era-slider" min="0" max="4" step="1" value="4">
-                    <div class="slider-labels">
-                        <span>삼국</span>
-                        <span>통일신라</span>
-                        <span>고려</span>
-                        <span>조선</span>
-                        <span>근대/전체</span>
-                    </div>
-                    <div class="current-era" id="current-era-display">전체 시대</div>
+            <div class="sidebar-content">
+                <div class="control-group">
+                    <label for="region-select">지역 선택 (Region)</label>
+                    <select id="region-select">
+                        <option value="all">전체 보기</option>
+                        <option value="gyeongju" selected>경상북도 경주시</option>
+                        <option value="seoul">서울특별시 종로구</option>
+                        <option value="buyeo">충청남도 부여군</option>
+                    </select>
                 </div>
-            </div>
 
-            <div class="control-group">
-                <button id="btn-recommend-course" class="primary-btn">
-                    🏛️ 답사 코스 추천받기
-                </button>
-            </div>
+                <div class="control-group">
+                    <label>시대 설정 (Time Travel)</label>
+                    <div class="slider-container">
+                        <input type="range" id="era-slider" min="0" max="4" step="1" value="4">
+                        <div class="slider-labels">
+                            <span>삼국</span>
+                            <span>통일신라</span>
+                            <span>고려</span>
+                            <span>조선</span>
+                            <span>근대/전체</span>
+                        </div>
+                        <div class="current-era" id="current-era-display">전체 시대</div>
+                    </div>
+                </div>
 
-            <div id="course-results" class="course-list">
-                <!-- Recommendations will appear here -->
-                <div class="placeholder-msg">
-                    지역을 선택하고 버튼을 눌러<br>맞춤형 코스를 확인하세요.
+                <div class="control-group">
+                    <button id="btn-recommend-course" class="primary-btn">
+                        🏛️ 답사 코스 추천받기
+                    </button>
+                </div>
+
+                <div id="course-results" class="course-list">
+                    <!-- Recommendations will appear here -->
+                    <div class="placeholder-msg">
+                        지역을 선택하고 버튼을 눌러<br>맞춤형 코스를 확인하세요.
+                    </div>
                 </div>
             </div>
         </aside>
@@ -62,7 +68,8 @@
         <main class="map-area">
             <div id="map"></div>
             <!-- API Key Warning Overlay (Shown if map filter fails or key is missing logic triggers) -->
-            <div id="apikey-warning" style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:rgba(0,0,0,0.8); color:white; padding:20px; border-radius:8px; z-index:1000; text-align:center;">
+            <div id="apikey-warning"
+                style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:rgba(0,0,0,0.8); color:white; padding:20px; border-radius:8px; z-index:1000; text-align:center;">
                 <h3>⚠️ Kakao API Key 필요</h3>
                 <p>index.html 파일의 script 태그에<br>Kakao JavaScript 키를 입력해주세요.</p>
             </div>
@@ -70,9 +77,11 @@
     </div>
 
     <!-- Scripts -->
-    <!-- IMPORTANT: Replace 'YOUR_APP_KEY' with your actual Kakao Maps JavaScript API Key -->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bec5d64c9fb0e46a49dcda67fadce86a"></script>
+    <!-- Updated with user provided API Key -->
+    <script type="text/javascript"
+        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=bec5d64c9fb0e46a49dcda67fadce86a"></script>
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>
