@@ -1,0 +1,247 @@
+:root {
+    --primary-color: #5d4037; /* Traditional wood color */
+    --accent-color: #d84315; /* Dancheong red/orange */
+    --bg-color: #f5f5f0; /* Hanji paper off-white */
+    --text-color: #333;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Song Myung', serif; /* Traditional serif font */
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 400px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    z-index: 10;
+    overflow-y: auto;
+}
+
+.sidebar header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1rem;
+}
+
+.sidebar h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.sidebar p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.control-group {
+    margin-bottom: 2rem;
+}
+
+.control-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+select:hover {
+    border-color: var(--primary-color);
+}
+
+/* Slider Styling */
+.slider-container {
+    text-align: center;
+}
+
+input[type=range] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+.current-era {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-top: 0.5rem;
+}
+
+/* Button */
+.primary-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: 'Song Myung', serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.primary-btn:hover {
+    background-color: #3e2723;
+}
+
+/* Course Results */
+.course-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.placeholder-msg {
+    text-align: center;
+    color: #999;
+    padding: 2rem 0;
+    line-height: 1.6;
+}
+
+.course-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--accent-color);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.course-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.course-meta {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.course-steps {
+    list-style: none;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.course-steps::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: #eee;
+}
+
+.course-step {
+    position: relative;
+    margin-bottom: 0.8rem;
+}
+
+.course-step::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 2px solid white;
+}
+
+.step-info .name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: block;
+}
+
+.step-info .dist {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* Map Area */
+.map-area {
+    flex-grow: 1;
+    position: relative;
+    background-color: #e0e0e0;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column-reverse;
+    }
+    .sidebar {
+        width: 100%;
+        height: 40%;
+    }
+    .map-area {
+        height: 60%;
+    }
+}
