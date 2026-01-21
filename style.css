@@ -1,124 +1,29 @@
-:root {
-    --primary-color: #4a90e2;
-    --accent-color: #f39c12;
-    --bg-color: #f0f2f5;
-    --card-bg: #ffffff;
-}
-
-body {
-    font-family: 'Pretendard', -apple-system, sans-serif;
-    background-color: var(--bg-color);
-    margin: 0;
-    padding: 20px;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-h1 {
-    color: var(--primary-color);
-    margin-bottom: 5px;
-}
-
+/* 기존 .search-section 수정 */
 .search-section {
     background: var(--card-bg);
     padding: 20px;
     border-radius: 15px;
-    display: flex;
+    display: grid; /* flex에서 grid로 변경하여 깔끔하게 정렬 */
+    grid-template-columns: 1fr 1fr 1fr auto;
     gap: 15px;
     align-items: flex-end;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     margin-bottom: 25px;
 }
 
-.filter-group {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.filter-group label {
-    font-size: 13px;
-    font-weight: bold;
-    color: #666;
-}
-
-select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 15px;
-}
-
-.search-btn {
-    padding: 10px 25px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    height: 42px;
-}
-
-#result-info {
-    margin-bottom: 15px;
-    font-weight: bold;
-    color: #444;
-}
-
-/* 카드 스타일 */
-.place-card {
-    background: var(--card-bg);
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-    border-left: 5px solid var(--primary-color);
-}
-
-.place-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
-}
-
-.place-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.category-tag {
-    background: #eef5ff;
-    color: var(--primary-color);
+/* 배지 스타일 추가 */
+.badge {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
     font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-weight: bold;
+    margin-right: 5px;
+    border: 1px solid #ddd;
 }
 
-.place-info {
-    font-size: 14px;
-    color: #555;
-}
-
-.place-info div {
-    margin-bottom: 5px;
-}
-
-.empty-state {
-    text-align: center;
-    padding: 50px;
-    color: #999;
+/* 모바일 대응 (화면이 작아지면 세로로 쌓이게) */
+@media (max-width: 600px) {
+    .search-section {
+        grid-template-columns: 1fr;
+    }
 }
