@@ -40,8 +40,11 @@
                 <button onclick="searchPlaces()" class="main-btn">검색하기</button>
             </div>
         </div>
-        <div id="result-status"></div>
-        <div id="info-list"></div>
+
+        <div class="result-wrapper">
+            <div id="result-status"></div>
+            <div id="info-list"></div>
+        </div>
     </section>
 
     <section id="past-courses" class="section bg-light">
@@ -68,24 +71,16 @@
     <section id="wishlist" class="section">
         <div class="section-title">
             <h2>📝 가고 싶은 곳 제안하기</h2>
-            <p>파일에 없지만 우리 모두가 즐길 수 있는 꼭 가고 싶은 장소가 있나요?</p>
+            <p>파일에 없지만 우리가 꼭 가고 싶은 무장애 장소가 있나요?</p>
         </div>
         <div class="form-container">
-            <div class="form-group">
-                <label>장소 이름</label>
-                <input type="text" placeholder="예: 우리 학교 앞 미술관">
-            </div>
-            <div class="form-group">
-                <label>추천 이유</label>
-                <textarea rows="4" placeholder="학생들이 좋아할 만한 이유를 적어주세요."></textarea>
-            </div>
-            <button class="main-btn" onclick="alert('여러분의 소중한 의견이 제출되었습니다!')">의견 보내기</button>
+            <div class="form-group"><label>장소 이름</label><input type="text" placeholder="예: 우리 학교 앞 미술관"></div>
+            <div class="form-group"><label>추천 이유</label><textarea rows="4" placeholder="추천 이유를 적어주세요."></textarea></div>
+            <button class="main-btn" onclick="alert('제출되었습니다!')">의견 보내기</button>
         </div>
     </section>
 
-    <footer>
-        <p>© 2024 누구나 즐기는 수학여행. 모든 학생의 즐거운 추억을 응원합니다.</p>
-    </footer>
+    <footer><p>© 2024 누구나 즐기는 수학여행. 모든 학생의 즐거운 추억을 응원합니다.</p></footer>
 
     <script src="script.js"></script>
 </body>
