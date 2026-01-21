@@ -16,62 +16,67 @@ body { font-family: 'Noto Sans KR', sans-serif; margin: 0; color: var(--dark); l
 .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; }
 .nav-menu a:hover { color: var(--primary); }
 
-/* 히어로 섹션 - 배경 이미지 및 간격 수정 */
+/* 히어로 섹션 */
 .hero { 
     height: 100vh; 
     background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
                 url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1500&q=80'); 
-    background-size: cover; 
-    background-position: center;
+    background-size: cover; background-position: center;
     display: flex; align-items: center; justify-content: center; text-align: center; 
 }
 .hero h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--dark); }
 .highlight { color: var(--primary); border-bottom: 5px solid var(--accent); }
-.hero p { font-size: 1.2rem; color: #475569; margin-bottom: 40px; } /* 글과 버튼 사이 간격 */
-
-.cta-btn { 
-    margin-top: 20px; /* 추가 간격 */
-    display: inline-block;
-    padding: 18px 45px; background: var(--primary); color: white; 
-    text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem;
-    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3); transition: 0.3s;
-}
+.hero p { font-size: 1.2rem; color: #475569; margin-bottom: 40px; }
+.cta-btn { margin-top: 20px; display: inline-block; padding: 18px 45px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3); transition: 0.3s; }
 .cta-btn:hover { transform: translateY(-3px); background: #357ABD; }
 
 /* 섹션 공통 */
 .section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
-.section-title h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; }
+.section-title h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 15px; }
 .bg-light { background-color: var(--light); max-width: 100%; }
 
-/* 검색창 */
+/* 검색창 및 결과 카드 (기존 스타일 유지) */
 .search-container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 40px; }
 .search-inner { display: grid; grid-template-columns: repeat(3, 1fr) 150px; gap: 15px; align-items: flex-end; text-align: left; }
 .filter-box label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 5px; }
 select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; background: #fff; }
 .main-btn { width: 100%; padding: 14px; background: var(--primary); color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; }
 
-/* 결과 카드 스타일 */
 .result-wrapper { text-align: left; margin-top: 40px; }
-#result-status h3 { color: var(--primary); margin-bottom: 20px; }
 .place-card { background: white; border-radius: 20px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; }
 .place-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px; }
-.place-title { font-size: 1.3rem; font-weight: 700; color: var(--dark); }
+.place-title { font-size: 1.3rem; font-weight: 700; }
 .tag-group { display: flex; gap: 8px; }
 .tag { padding: 4px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; }
 .tag-cat1 { background: #E1F5FE; color: #0288D1; }
 .tag-cat2 { background: #FFF3E0; color: #E67E22; }
-.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem; color: #555; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem; }
 .barrier-box { margin-top: 15px; display: flex; gap: 8px; flex-wrap: wrap; }
 .badge { background: #f0f0f0; padding: 5px 10px; border-radius: 6px; font-size: 0.8rem; }
 
-/* 추천 코스 & 제안 폼 */
-.course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.course-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-.course-img { height: 180px; background: #eee; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+/* 추천 코스 */
+.course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.course-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.course-img { height: 200px; overflow: hidden; }
+.course-img img { width: 100%; height: 100%; object-fit: cover; }
 .course-info { padding: 20px; text-align: left; }
-.form-container { background: white; padding: 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto; }
-.form-group { margin-bottom: 20px; text-align: left; }
-.form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; margin-top: 5px; }
+
+/* 노션 제안 박스 스타일 */
+.notion-link-box { padding: 20px; }
+.notion-card { 
+    background: white; padding: 50px; border-radius: 30px; 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05); border: 1px solid #eee;
+    max-width: 700px; margin: 0 auto; transition: 0.3s;
+}
+.notion-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+.notion-icon { font-size: 4rem; margin-bottom: 20px; }
+.notion-card h3 { font-size: 1.8rem; margin-bottom: 10px; color: var(--dark); }
+.notion-card p { color: #64748B; margin-bottom: 30px; }
+.notion-btn { 
+    display: inline-block; padding: 15px 35px; background: #000; color: #fff; 
+    text-decoration: none; border-radius: 12px; font-weight: 700; transition: 0.3s;
+}
+.notion-btn:hover { background: #333; }
 
 footer { text-align: center; padding: 60px; color: #94A3B8; }
 
