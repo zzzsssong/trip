@@ -5,49 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>누구나 즐기는 수학여행</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.0"> <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 </head>
 <body>
-    <div class="main-wrapper">
-        <header>
-            <div class="logo">♿ 누구나 즐기는 수학여행</div>
-            <p>벽 없는 여행의 시작, 무장애 관광지 검색</p>
-        </header>
-        
-        <section class="search-container">
+    <nav class="navbar">
+        <div class="nav-logo">♿ 누구나 즐기는 수학여행</div>
+        <ul class="nav-menu">
+            <li><a href="#home">홈</a></li>
+            <li><a href="#search-section">장소 찾기</a></li>
+            <li><a href="#past-courses">추천 코스</a></li>
+            <li><a href="#wishlist">장소 제안</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>우리의 수학여행은<br><span class="highlight">누구에게나 즐거워야 하니까!</span></h1>
+            <p>휠체어도, 유모차도 걱정 없이. 모두가 함께 행복한 추억을 만들 수 있는<br>전국의 배리어프리 수학여행 장소를 찾아보세요.</p>
+            <a href="#search-section" class="cta-btn">지금 찾아보기</a>
+        </div>
+    </header>
+
+    <section id="search-section" class="section">
+        <div class="section-title">
+            <h2>🔍 수학여행 장소 찾아보기</h2>
+            <p>가고 싶은 지역과 테마를 선택해 보세요.</p>
+        </div>
+        <div class="search-container">
             <div class="search-inner">
-                <div class="filter-box">
-                    <label>지역</label>
-                    <select id="sidoSelect" onchange="updateGugun()">
-                        <option value="">시/도 선택</option>
-                    </select>
-                </div>
-                <div class="filter-box">
-                    <label>상세 지역</label>
-                    <select id="gugunSelect">
-                        <option value="">시/군/구 선택</option>
-                    </select>
-                </div>
-                <div class="filter-box">
-                    <label>장소 유형</label>
-                    <select id="cat1Select">
-                        <option value="">전체 유형</option>
-                    </select>
-                </div>
+                <div class="filter-box"><label>지역</label><select id="sidoSelect" onchange="updateGugun()"><option value="">시/도 선택</option></select></div>
+                <div class="filter-box"><label>상세 지역</label><select id="gugunSelect"><option value="">시/군/구 선택</option></select></div>
+                <div class="filter-box"><label>장소 유형</label><select id="cat1Select"><option value="">전체 유형</option></select></div>
                 <button onclick="searchPlaces()" class="main-btn">검색하기</button>
             </div>
-        </section>
+        </div>
+        <div id="result-status"></div>
+        <div id="info-list"></div>
+    </section>
 
-        <main class="content-area">
-            <div id="result-status"></div>
-            <div id="info-list">
-                <div class="welcome-card">
-                    <div class="icon">🔍</div>
-                    <p>가고 싶은 지역을 선택하여<br>아름다운 여행지를 찾아보세요!</p>
-                </div>
+    <section id="past-courses" class="section bg-light">
+        <div class="section-title">
+            <h2>📜 추천 수학여행 코스</h2>
+            <p>이미 다녀온 선배들이 추천하는 베스트 루트입니다.</p>
+        </div>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-img">📸</div>
+                <div class="course-info"><h3>[서울] 역사 전통 탐방</h3><p>경복궁 - 국립중앙박물관 - 남산타워</p></div>
             </div>
-        </main>
-    </div>
+            <div class="course-card">
+                <div class="course-img">🌊</div>
+                <div class="course-info"><h3>[부산] 바다 향기 코스</h3><p>해운대 - 해동용궁사 - 광안리</p></div>
+            </div>
+            <div class="course-card">
+                <div class="course-img">🌳</div>
+                <div class="course-info"><h3>[경주] 신라의 달밤</h3><p>불국사 - 안압지 - 황리단길</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wishlist" class="section">
+        <div class="section-title">
+            <h2>📝 가고 싶은 곳 제안하기</h2>
+            <p>파일에 없지만 우리 모두가 즐길 수 있는 꼭 가고 싶은 장소가 있나요?</p>
+        </div>
+        <div class="form-container">
+            <div class="form-group">
+                <label>장소 이름</label>
+                <input type="text" placeholder="예: 우리 학교 앞 미술관">
+            </div>
+            <div class="form-group">
+                <label>추천 이유</label>
+                <textarea rows="4" placeholder="학생들이 좋아할 만한 이유를 적어주세요."></textarea>
+            </div>
+            <button class="main-btn" onclick="alert('여러분의 소중한 의견이 제출되었습니다!')">의견 보내기</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 누구나 즐기는 수학여행. 모든 학생의 즐거운 추억을 응원합니다.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
