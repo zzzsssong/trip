@@ -4,45 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>누구나 즐기는 수학여행</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="main-wrapper">
         <header>
-            <h1>♿ 누구나 즐기는 수학여행</h1>
-            <p>모두를 위한 배리어프리 무장애 관광 정보</p>
+            <div class="logo">♿ 누구나 즐기는 수학여행</div>
+            <p>벽 없는 여행의 시작, 무장애 관광지 검색</p>
         </header>
         
-        <div class="search-section">
-            <div class="filter-group">
-                <label for="sidoSelect">지역(시/도)</label>
-                <select id="sidoSelect" onchange="updateGugun()">
-                    <option value="">시/도 선택</option>
-                </select>
+        <section class="search-container">
+            <div class="search-inner">
+                <div class="filter-box">
+                    <label>지역</label>
+                    <select id="sidoSelect" onchange="updateGugun()">
+                        <option value="">시/도 선택</option>
+                    </select>
+                </div>
+                <div class="filter-box">
+                    <label>상세 지역</label>
+                    <select id="gugunSelect">
+                        <option value="">시/군/구 선택</option>
+                    </select>
+                </div>
+                <div class="filter-box">
+                    <label>장소 유형</label>
+                    <select id="cat1Select">
+                        <option value="">전체 유형</option>
+                    </select>
+                </div>
+                <button onclick="searchPlaces()" class="main-btn">검색하기</button>
             </div>
-            <div class="filter-group">
-                <label for="gugunSelect">상세(시/군/구)</label>
-                <select id="gugunSelect">
-                    <option value="">시/군/구 선택</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="cat1Select">장소 유형</label>
-                <select id="cat1Select">
-                    <option value="">전체 유형</option>
-                </select>
-            </div>
-            <button onclick="searchPlaces()" class="search-btn">조회하기</button>
-        </div>
+        </section>
 
-        <div id="result-info"></div>
-        
-        <div id="info-list">
-            <div class="empty-state">
-                <p>가고 싶은 지역과 유형을 선택하고 조회 버튼을 눌러주세요!</p>
+        <main class="content-area">
+            <div id="result-status"></div>
+            <div id="info-list">
+                <div class="welcome-card">
+                    <div class="icon">🔍</div>
+                    <p>가고 싶은 지역을 선택하여<br>아름다운 여행지를 찾아보세요!</p>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>
